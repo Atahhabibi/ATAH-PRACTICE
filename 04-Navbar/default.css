@@ -1,16 +1,5 @@
 /* 
 ================
-temp
-================
-*/
-
-body{
-    padding: 2rem 5rem;
-    
-}
-
-/* 
-================
 Global css
 ================
 */
@@ -210,3 +199,127 @@ ul{
         transform:rotate(360deg);
     }
 }
+
+/* Navbar */
+
+.navbar{
+   box-shadow:0 5px 8px rgb(0 0 0 / 0.1);
+   height:4rem;
+}
+.nav-center{
+  display: grid;
+  grid-template-columns:1fr 1.5fr 1fr;
+  max-width: 90vw;
+  margin: 0 auto;
+     
+}
+
+.logo-img{
+  align-self: center;
+  width:12rem;
+}
+
+.nav-toggle i{
+    display: none;
+}
+
+
+.pages{
+   display: grid;
+   grid-template-columns:repeat(auto-fill,minmax(5rem,1fr));
+   column-gap: 1rem;
+   place-items: center;
+  
+}
+
+.pages a{
+    text-transform: capitalize;
+    letter-spacing:3px;
+    color: var(--grey-900);
+    font-size:1.1rem;
+    cursor: pointer;
+}
+
+
+.social-icons{
+    justify-self: flex-end;
+    align-self: center;
+    display: flex;
+    gap:1rem; 
+}
+
+.social-icon{
+    color:var(--primary-400);
+    font-size:1.2rem;
+}
+
+
+@media screen and (max-width:1100px){
+
+    .social-icons{
+        display: none;
+    }
+
+    .navbar{
+        overflow: hidden;
+        transition: var(--transititon);
+    }
+
+    .nav-toggle i{
+        display:inline;
+        align-self:center;
+        justify-self: flex-end;
+        font-size: 2rem;
+        color: var(--primary-500);
+    }
+
+    .nav-toggle{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top:0.5rem;
+        transform:rotate(360deg);
+
+    }
+
+    .nav-center{
+        display: block;
+        height: 100%;
+        max-width: 95vw;
+        
+    }
+
+    .pages{
+        display:block;
+        height:auto;
+    }
+
+    .pages li{
+        margin-top:1rem;
+    }
+    
+   
+
+
+
+   
+ 
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
