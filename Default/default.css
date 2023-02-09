@@ -1,21 +1,12 @@
 /* 
 ================
-temp
-================
-*/
-
-body{
-    padding: 2rem 5rem;
-    
-}
-
-/* 
-================
 Global css
 ================
 */
 
 @import url('https://fonts.googleapis.com/css?family=Karla:400|Spectral:400');
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500;600;700;800&display=swap');
 
 *,::after,::before{
   padding: 0;
@@ -27,6 +18,11 @@ Global css
 html {font-size: 100%;} /*16px*/
 
 :root{
+
+    --ff-family-1: 'Fugaz One', cursive;
+    --ff-family-2:'Spectral',serif;
+    --ff-family-3:'Karla', sans-serif;
+    --ff-family-4:'Abhaya Libre', serif;
 
     /* COLORS */
 
