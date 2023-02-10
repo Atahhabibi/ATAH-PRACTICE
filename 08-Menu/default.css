@@ -65,7 +65,7 @@ html {font-size: 100%;} /*16px*/
 
     /* REST OF VARS */
 
-    --backgroundColor:var(--grey-50);
+    --backgroundColor:var(--grey-200);
     --textColor:var(--grey-900);
     --borderRadius:0.5rem;
     --leterSpacing:1px;
@@ -253,6 +253,7 @@ ul{
     font-size:1.2rem;
     transition: var(--transititon);
     border-color: var(--grey-800);
+    box-shadow: var(--shadow-2);
     
 }
 
