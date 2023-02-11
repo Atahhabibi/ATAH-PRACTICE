@@ -17,6 +17,10 @@ Global css
 
 html {font-size: 100%;} /*16px*/
 
+html{
+    scroll-behavior: smooth;
+}
+
 :root{
 
     --ff-family-1: 'Fugaz One', cursive;
@@ -215,18 +219,6 @@ ul{
     transition:var(--transititon);
 }
 
-.show-fixed-Navbar{
-    max-width:auto;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    background:white;
-    min-width: 100vw;
-}
-
-
-
-
 
 .nav-center{
     display: flex;
@@ -363,6 +355,25 @@ footer{
 /* javascript css */
 
 
+.show-fixed-Navbar{
+    max-width:auto;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    background:white;
+    min-width: 100vw;
+}
+
+.show .link a{
+    color: var(--grey-900);
+   
+}
+
+.show .link:hover a{
+    color: green;
+}
+
+
 
 
 
@@ -380,9 +391,16 @@ footer{
 
     .links{
         display:block;
-        /* height: 0; */ 
-        height: 0;
+        overflow: hidden;
     }
+
+    .links-container{
+        height: 0;
+        overflow: hidden;
+    }
+
+
+
 
     .links a{
         display: inline-block;
