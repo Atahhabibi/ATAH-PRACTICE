@@ -6,9 +6,10 @@ const toggleBtnDOM=getElement('.toggle-btn');
 const linksDOM=getElement('.links');
 const linksContainerDOM=getElement('.links-container');
 
+
 const navbarHeight=navBarDOM.getBoundingClientRect().height;
 const linksHeight=linksDOM.getBoundingClientRect().height;
-
+const linksContainerHeight=linksContainerDOM.getBoundingClientRect().height;
 
 
 
