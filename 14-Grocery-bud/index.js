@@ -24,6 +24,8 @@ submitBtnDOM.addEventListener('click',(e)=>{
             submitBtnDOM.textContent='submit';
             const id=new Date().getTime();
             createItem(value,id)
+            showHighLight('success','Item added to the cart')
+            storeItemstoStorage(id,value)
             inputDOM.value='';
 
         }else{
@@ -40,6 +42,8 @@ submitBtnDOM.addEventListener('click',(e)=>{
       if(value){
 
           editItem(articleId,value)
+
+          EditItemFromStorage(articleId,value);
           showHighLight('success','Item editted')
           editFlag=false;
           submitBtnDOM.textContent='submit';
@@ -88,7 +92,7 @@ groceryContainerDOM.addEventListener('click',(e)=>{
 
     const item=e.target.parentElement.parentElement.parentElement;
     const id=item.getAttribute('id');
-
+  
     submitBtnDOM.textContent='edit';
 
     inputDOM.value=item.firstElementChild.textContent;
@@ -106,6 +110,8 @@ groceryContainerDOM.addEventListener('click',(e)=>{
 
      const item=e.target.parentElement.parentElement.parentElement;
      const id=item.getAttribute('id');
+     removeItemFormStorage(id)
+    
  
      groceryContainerDOM.removeChild(item);
      showHighLight('warning','Item remove from the list');
@@ -169,10 +175,7 @@ function createItem(name,id){
 
 
     groceryContainerDOM.appendChild(newArticle);
-    showHighLight('success','Item added to the cart')
-
-
-
+    
     
 }
 
@@ -203,10 +206,120 @@ function showHighLight(sign,text){
 
 clearBtnDOM.addEventListener('click',()=>{
     groceryContainerDOM.innerHTML="";
+    localStorage.setItem('store',[])
     showHighLight('warning','All item removed from the list')
     clearBtnDOM.style.visibility='hidden';
 })
 
 
+function getItemsArrayFromStorage(){
+
+    let item=localStorage.getItem('store');
+
+    if(item){
+        item=JSON.parse(item);
+
+    }else{
+        item=[];
+    }
+
+    return item;
+
+    
+}
 
 
+
+
+function storeItemstoStorage(id,value){
+
+    let array=getItemsArrayFromStorage();
+
+    let item={id,value};
+
+    array.push(item);
+
+    localStorage.setItem('store',JSON.stringify(array));
+
+
+}
+
+
+
+function EditItemFromStorage(id,value){
+
+    const tempID=parseInt(id);
+
+    let array=getItemsArrayFromStorage();
+
+    array=array.map((item)=>{
+
+       if(item.id===tempID){
+        return {id:tempID,value:value}
+       }
+
+       return item;
+
+
+    })
+
+
+    localStorage.setItem('store',JSON.stringify(array))
+
+
+}
+
+
+
+
+
+function removeItemFormStorage(id){
+
+    const tempID=parseInt(id);
+
+    let array=getItemsArrayFromStorage();
+
+    array=array.filter((item)=>item.id!==tempID);
+
+    localStorage.setItem('store',JSON.stringify(array));
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.addEventListener('DOMContentLoaded',()=>{
+
+    const store=getItemsArrayFromStorage();
+
+    if(store.length>0){
+
+    clearBtnDOM.style.visibility='visible'
+
+    store.map((item)=>{
+
+        const{id,value}=item;
+
+        createItem(value,id);
+
+    })
+
+    }else{
+        clearBtnDOM.style.visibility='hidden';
+        return;
+    }
+    
+
+
+})
