@@ -17,11 +17,19 @@ function Gallery(element,name){
 
   this.imageContainerDOM=this.overLayDOM.querySelector('.image-container');
   this.sectionImagesDOM=[...element.querySelectorAll('.photo')];
+
+  this.imageContainerDOM.innerHTML=this.sectionImagesDOM.map((img)=>{
+    const title=img.getAttribute('alt');
+    return ` <img src="${img.src}" alt="${title}" class="img small-img"> `
+  }).join("");
+
  
+
+  this.allSmallImagesDOM=[...this.overLayDOM.querySelectorAll('.small-img')];
 
 
   this.longImageDOM=this.overLayDOM.querySelector('.long-img')
-  this.allSmallImagesDOM=[...this.overLayDOM.querySelectorAll('.small-img')];
+  
   this.imageTitleDOM=this.overLayDOM.querySelector('.slide-title');
 
 
@@ -30,11 +38,16 @@ function Gallery(element,name){
    photo.addEventListener('click',this.showModal.bind(this))
  })
 
+ 
+
  this.closeBtn.addEventListener('click',this.hideModal.bind(this));
 
  this.imageViewerDOM.addEventListener('click',this.moveSlide.bind(this));
 
  this.imageContainerDOM.addEventListener('click',this.showSmallImage.bind(this));
+
+
+
 
 
 
@@ -48,10 +61,7 @@ Gallery.prototype.showModal=function(e){
   this.imageTitleDOM.textContent=title;
   this.longImageDOM.src=photoDOM.src;
 
-  this.imageContainerDOM.innerHTML=this.sectionImagesDOM.map((img)=>{
-    const title=img.getAttribute('alt');
-    return ` <img src="${img.src}" alt="${title}" class="img small-img"> `
-  }).join("");
+
 
 
   this.allSmallImagesDOM.forEach((smallImg)=>{
@@ -103,7 +113,9 @@ Gallery.prototype.moveSlide=function(e){
       this.count=this.imageContainerDOM.children.length-1;
     }
 
+
   }
+
 
   this.longImageDOM.src=this.allSmallImagesDOM[this.count].src;
 
