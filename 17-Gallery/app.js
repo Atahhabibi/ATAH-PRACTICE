@@ -4,7 +4,6 @@ const sectionCity=getElement('.section-city');
 const sectionNature=getElement('.section-nature');
 
 function Gallery(element,name){
-
   this.count=0;
   this.element=element;
   this.sectionName=name;
@@ -13,24 +12,19 @@ function Gallery(element,name){
   this.imageViewerDOM=this.overLayDOM.querySelector('.image-viewer');
   this.slideBtnDOM=this.overLayDOM.querySelector('.slide-btn');
   this.closeBtn=this.overLayDOM.querySelector('.close-btn');
-
-
+  
   this.imageContainerDOM=this.overLayDOM.querySelector('.image-container');
-  this.sectionImagesDOM=[...element.querySelectorAll('.photo')];
-
-  this.imageContainerDOM.innerHTML=this.sectionImagesDOM.map((img)=>{
-    const title=img.getAttribute('alt');
-    return ` <img src="${img.src}" alt="${title}" class="img small-img"> `
-  }).join("");
-
- 
-
-  this.allSmallImagesDOM=[...this.overLayDOM.querySelectorAll('.small-img')];
+  this.sectionImagesDOM=[...element.querySelectorAll(`.photo`)];
 
 
   this.longImageDOM=this.overLayDOM.querySelector('.long-img')
-  
   this.imageTitleDOM=this.overLayDOM.querySelector('.slide-title');
+
+
+  this.hideModal=this.hideModal.bind(this);
+  this.moveSlide=this.moveSlide.bind(this);
+  this.showModal=this.showModal.bind(this);
+  this.showSmallImage=this.showSmallImage.bind(this);
 
 
 
@@ -38,30 +32,44 @@ function Gallery(element,name){
    photo.addEventListener('click',this.showModal.bind(this))
  })
 
- 
 
  this.closeBtn.addEventListener('click',this.hideModal.bind(this));
+ 
 
- this.imageViewerDOM.addEventListener('click',this.moveSlide.bind(this));
-
- this.imageContainerDOM.addEventListener('click',this.showSmallImage.bind(this));
-
-
-
-
-
+ 
 
 }
 
 
 Gallery.prototype.showModal=function(e){
+
+
+
+  this.imageContainerDOM.innerHTML=this.sectionImagesDOM.map((img)=>{
+    const title=img.getAttribute('alt');
+    return ` <img src="${img.src}" alt="${title}" class="img small-img"> `
+  }).join("");
+
+
+  
+
+  this.allSmallImagesDOM=[...this.overLayDOM.querySelectorAll('.small-img')];
+  this.imageContainerDOM.addEventListener('click',this.showSmallImage);
+  this.imageViewerDOM.addEventListener('click',this.moveSlide);
+  
+  
+
+
   this.overLayDOM.classList.add('show-overlay');
   const photoDOM=e.target;
   const title=e.target.getAttribute('alt');
   this.imageTitleDOM.textContent=title;
   this.longImageDOM.src=photoDOM.src;
+  photoDOM.style.pointerEvents='none';
 
+ 
 
+  console.log(this.allSmallImagesDOM);
 
 
   this.allSmallImagesDOM.forEach((smallImg)=>{
@@ -78,6 +86,7 @@ Gallery.prototype.showModal=function(e){
 
 
 
+
   })
 
 }
@@ -89,6 +98,9 @@ Gallery.prototype.hideModal=function(){
 }
 
 Gallery.prototype.moveSlide=function(e){
+  
+  this.allSmallImagesDOM=[...this.overLayDOM.querySelectorAll('.small-img')];
+
 
   const slideBtnDOM=e.target.parentElement;
   
@@ -116,6 +128,11 @@ Gallery.prototype.moveSlide=function(e){
 
   }
 
+  console.log(this.allSmallImagesDOM);
+
+
+
+  
 
   this.longImageDOM.src=this.allSmallImagesDOM[this.count].src;
 
@@ -137,6 +154,7 @@ Gallery.prototype.moveSlide=function(e){
     }
 
   })
+
 }
 
 
