@@ -21,8 +21,13 @@ searchInputDOM.addEventListener('keyup',async()=>{
 
     const value=searchInputDOM.value;
 
-    if(value==="")showDrink();
-    else showDrink(value)
+    if(value===""){
+        showDrink();
+    }else{
+        showDrink(value)
+
+    }
+    
 
 })
 

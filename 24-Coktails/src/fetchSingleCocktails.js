@@ -1,5 +1,6 @@
 import { SingleCoktail_API } from "../api.js"
 import { getElement } from "../Utils.js"
+import { getDrinks, setDrinks } from "./locakStorage.js";
 
 
 const LoadingDOM=getElement('.single-loading');
@@ -12,6 +13,18 @@ const fetchSingleCocktails=async(id)=>{
     LoadingDOM.style.display='block';
     btn2.style.display='none';
 
+    let singleObjectArray=getDrinks(id);
+
+    if(singleObjectArray.length>0){
+        LoadingDOM.style.display='none';
+        btn2.style.display='none';
+        return singleObjectArray;
+    }
+
+ 
+
+
+
     try {
         const response=await fetch(`${SingleCoktail_API}${id}`);
 
@@ -20,10 +33,13 @@ const fetchSingleCocktails=async(id)=>{
             let singleObject=await response.json();
             LoadingDOM.style.display='none';
 
-            if(!singleObject.drinks){
+            singleObjectArray=singleObject.drinks;
+
+            if(!singleObjectArray){
                return [];
             }else{
-                return singleObject.drinks;
+                setDrinks(id,singleObjectArray)
+                return singleObjectArray;
             }
 
         }else{

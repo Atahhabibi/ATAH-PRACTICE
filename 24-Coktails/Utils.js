@@ -43,6 +43,7 @@ const formatPrice = (price) => {
 const getStorageItem = (name) => {
 
     let storageItem=localStorage.getItem(name);
+    
     if(storageItem){
       storageItem=JSON.parse(localStorage.getItem(name))
     }else{

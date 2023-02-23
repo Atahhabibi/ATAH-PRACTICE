@@ -385,6 +385,7 @@ body{
 
 .single-coktail-btn:hover{
     background:var(--primary-500);
+    cursor: pointer;
 }
 
 

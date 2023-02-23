@@ -1,10 +1,19 @@
 import { getElement } from "../Utils.js";
 import { Cocktails_API } from "../api.js";
+import { getDrinks,setDrinks } from "./locakStorage.js";
 
 const loadingDOM=getElement('.cocktails-loading');
 const cocktailsConatainerDOM=getElement('.cocktails-container');
 
 const fetchCocktails=async(name="a")=>{
+
+
+    let drinksArray=getDrinks(name);
+
+  
+    if(drinksArray.length>0){
+       return drinksArray;
+    }
 
 
     loadingDOM.style.display='block';
@@ -17,7 +26,7 @@ const fetchCocktails=async(name="a")=>{
             loadingDOM.style.display='none';
             const data= await response.json();
 
-            let drinksArray=data.drinks;
+             drinksArray=data.drinks;
 
 
             if(!drinksArray){
@@ -27,6 +36,11 @@ const fetchCocktails=async(name="a")=>{
                return; 
             }
 
+            console.log(drinksArray);
+
+            setDrinks(name,drinksArray);
+
+        
             return drinksArray;
 
 
