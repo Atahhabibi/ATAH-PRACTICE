@@ -18,11 +18,11 @@ const fetchSingleCocktails=async(id)=>{
         if(response.status>=200 && response.status<=299 && response.ok){
 
             let singleObject=await response.json();
+            LoadingDOM.style.display='none';
 
             if(!singleObject.drinks){
                return [];
             }else{
-                LoadingDOM.style.display='none';
                 return singleObject.drinks;
             }
 

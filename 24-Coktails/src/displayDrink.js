@@ -23,6 +23,10 @@ const dispalyDrink=(drinkObject)=>{
                 
                 <ul class="single-ingredients-container">
                 ${ingredients.map((item)=>{
+
+                    if(!item){
+                        return;
+                    }
                     return `<li class="single-ingredient"><i class="fa-regular fa-square-check"></i>${item}</li>`
                 }).join(" ")}
                    
@@ -31,8 +35,6 @@ const dispalyDrink=(drinkObject)=>{
                 <button class="single-coktail-btn"><a href="../index.html">all cocktails</a></button>
                 
             </div>
-    
-    
     
     
     `
