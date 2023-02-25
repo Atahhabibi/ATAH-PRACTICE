@@ -90,14 +90,28 @@ linksBtn.addEventListener('mouseover',(e)=>{
      
         
 
-        
+    
 
-        smallOverlay.addEventListener('mouseleave',(e)=>{
+        navbarDOM.addEventListener('mouseover',(e)=>{
 
             const element=e.target;
-            if(element.classList.contains('small-overlay')){
-                smallOverlay.style.display='none';
-            }
+
+            console.log(element);
+
+           if( element.classList.contains('category-btn')){
+               smallOverlay.style.display='block'
+
+               smallOverlay.addEventListener('mouseleave',()=>{
+                 smallOverlay.style.display='none';
+               })
+           }
+
+           if(element.classList.contains('navbar')){
+             smallOverlay.style.display='none';
+           }
+
+           
+          
         })
 
 
@@ -143,7 +157,7 @@ function createSublinks(item){
            links.map((link)=>{
                const {label,icon,url}=link;
                return `  
-               <button class="link "> <a href="./${url}"><i class="${icon}"></i>${label}</a></button>
+               <button class="link "> <a href="./${url}"><i class="${icon} "></i>${label}</a></button>
                `
            }).join(" ")
         }
