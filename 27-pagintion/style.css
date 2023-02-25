@@ -351,6 +351,15 @@ section{
 }
 
 
+.follower-btn{
+    display: grid;
+    grid-template-columns:1fr 1fr  1fr 1fr;
+    justify-items: center;
+    row-gap:0.5rem;
+    margin:2rem 0;
+}
+
+
 
 
 
@@ -366,13 +375,23 @@ section{
         grid-template-columns:1fr 1fr;
         gap:2rem;
     }
+
+    .follower-btn{
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+  
     
 }
 
-@media screen and (min-width:900px) {
+@media screen and (min-width:1000px) {
 
     .github-container{
         grid-template-columns:1fr 1fr 1fr;
+    }
+
+    .follower-btn{
+        display:inline;
     }
     
 }

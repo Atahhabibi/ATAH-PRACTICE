@@ -44,65 +44,57 @@ const displayButtons=(data)=>{
  })
 
 
- let count=0;
+let count=0;
+let value=0;
 
  nextBtnDOM.addEventListener('click',()=>{
 
-   allBtnDOM.forEach((btn)=>{
-       
-    let value=btn.dataset.value;
-    value=parseInt(value);
+    allBtnDOM.forEach((btn)=>{
+        if(btn.classList.contains('active')){
+            value=parseInt(btn.dataset.value);
+            btn.classList.remove('active');
+        }
 
-    if(count===value){
+    })
 
-        allBtnDOM.forEach((item)=>{
-            item.classList.remove('active');
-        })
+    
+    count=value;
 
-        btn.classList.add('active')
+    count++;
+
+    if(count>data.length-1){
+        count=0;
     }
-          
-   })
-
-   count++;
-
-   if(count>data.length-1){
-       count=0;
-   }
-
-   displayFollowers(data[count]);
-
+    
+    allBtnDOM[count].classList.add('active');
+    displayFollowers(data[count]);
      
  })
 
+
+ 
 prevBtnDOM.addEventListener('click',()=>{
 
-
     allBtnDOM.forEach((btn)=>{
-       
-        let value=btn.dataset.value;
-        value=parseInt(value);
-    
-        if(count===value){
-    
-            allBtnDOM.forEach((item)=>{
-                item.classList.remove('active');
-            })
-    
-            btn.classList.add('active')
+        if(btn.classList.contains('active')){
+            value=parseInt(btn.dataset.value);
+            btn.classList.remove('active');
         }
-              
-       })
+
+    })
+
     
+    count=value;
 
-   count--;
+    count--;
 
-   if(count<0){
-       count=data.length-1;
-   }
+    if(count<0){
+        count=data.length-1;
+    }
+    
+    allBtnDOM[count].classList.add('active');
 
-   displayFollowers(data[count]);
-
+    displayFollowers(data[count]);
 
      
  })

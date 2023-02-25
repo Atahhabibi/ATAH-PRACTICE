@@ -2,7 +2,7 @@ import { getElement } from "../Utils.js"
 import { github_API } from "../api.js"
 
 const loadingDOM=getElement('.loading');
-const githubContainer=getElement('.github-container');
+const sectionCenter=getElement('.section-center');
 
 
 
@@ -11,6 +11,7 @@ const githubContainer=getElement('.github-container');
 const fetchFollwers=async()=>{
 
     loadingDOM.style.display='block';
+    sectionCenter.style.display='none';
 
     try {
         const response=await fetch(github_API);
@@ -19,6 +20,7 @@ const fetchFollwers=async()=>{
         if(response.status>=200 && response.status<=299 && response.ok){
             loadingDOM.style.display='none';
             let data= await response.json();
+            sectionCenter.style.display='block';
 
             data=data.map((item)=>{
                 const {login:name,avatar_url:img,html_url:profileURL}=item;
@@ -37,7 +39,7 @@ const fetchFollwers=async()=>{
         
     } catch (error) {
         console.log(error.message);
-        githubContainer.innerHTML=`<h3>There was an error</h3>`;
+        sectionCenter.innerHTML=`<h3>There was an error</h3>`;
         loadingDOM.style.display='none';
 
     }
