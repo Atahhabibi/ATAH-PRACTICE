@@ -1,17 +1,16 @@
+import { displayProducts } from './src/dipslayProducts.js';
+import { fetchProducts } from './src/fetchProducts.js';
 import {getElement} from './Utils.js';
+import './src/toggleSidebar.js'
 
-const toggleBtn=getElement('.toggle-btn');
-const closeBtnDOM=getElement('.close-btn');
+const featureContainerDOM=getElement('.feature-container');
 
-const modalOverlayDOM=getElement('.modal-overlay')
 
-toggleBtn.addEventListener('click',()=>{
+window.addEventListener('DOMContentLoaded',async()=>{
+   const data=await fetchProducts();
+   const featuresItems=data.filter((item)=>item.featured);
+   displayProducts(featuresItems,featureContainerDOM);
 
-    modalOverlayDOM.classList.add('show-modal')
-})
 
-closeBtnDOM.addEventListener('click',()=>{
-
-    modalOverlayDOM.classList.remove('show-modal')
 })
 
