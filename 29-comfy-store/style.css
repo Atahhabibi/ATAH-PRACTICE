@@ -691,7 +691,7 @@ border-radius: 50%;
 
 .company-btn{
     display: block;
-    margin-bottom:1.4rem;
+    margin-bottom:1rem;
     border: transparent;
     text-transform: capitalize;
     color: var(--grey-600);
@@ -723,6 +723,16 @@ border-radius: 50%;
     .products-container .product{
         margin-bottom:1rem;
        
+    }
+
+    .product{
+        height: fit-content;
+    }
+
+    .products-form{
+      position: sticky;
+      top:2rem;
+      height: fit-content;
     }
 
    

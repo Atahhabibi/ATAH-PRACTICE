@@ -27,7 +27,7 @@ const displayProducts=(data,container)=>{
 
                 <div class="product-info">
                     <h5 class="product-heading">${name}</h5>
-                    <h5 class="product-price">$${price}</h5>
+                    <h5 class="product-price">${formatprice(price)}</h5>
                 </div>
 
             </article>
@@ -39,6 +39,17 @@ const displayProducts=(data,container)=>{
 
      container.innerHTML=newData;
 
+
+}
+
+
+function formatprice(price){
+
+    const formatObject= new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'});
+
+   const newprice= formatObject.format((price/100).toFixed(2));
+
+   return newprice;
 
 }
 
