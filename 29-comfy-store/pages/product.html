@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="modal-overlay ">
+
+        <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+
+        <button class="link over-link"><a href="../index.html"><i class="fa-solid fa-house fa-fw"></i>home</a></button>
+        <button class="link over-link"><a href="../pages/products.html"><i
+                    class="fa-solid fa-couch fa-fw"></i>products</a></button>
+        <button class="link over-link"><a href="../pages/about.html"><i
+                    class="fa-solid fa-book fa-fw"></i>about</a></button>
+
+
+    </div>
+
+    <div class="cart-overlay">
+
+        <button class="cart-close-btn"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="cart-overlay-wrapper">
+
+            <h3 class="cart-overlay-heading text-slanted">your bag</h3>
+
+            <div class="cart-overlay-container">
+
+                <!-- single item -->
+
+                <article class="cart-overlay-product">
+
+                    <img src="../images/table.jpeg" alt="product" class="img cart-overlay-img">
+
+                    <div class="cart-overlay-product-info">
+
+                        <h5 class="cart-overlay-name">sofa set</h5>
+                        <h5 class="cart-overlay-price">$99.5</h5>
+                        <button class="cart-overlay-btn">remove</button>
+
+                    </div>
+
+                    <div class="cart-overlay-toggle-btn">
+
+                        <button class="increase-btn"><i class="fa-solid fa-angle-up"></i></button>
+                        <span class="cart-overlay-value">1</span>
+                        <button class="decrease-btn"><i class="fa-solid fa-angle-down"></i></button>
+
+                    </div>
+
+
+                </article>
+
+                <!-- single item -->
+
+                <article class="cart-overlay-product">
+
+                    <img src="../images/table.jpeg" alt="product" class="img cart-overlay-img">
+
+                    <div class="cart-overlay-product-info">
+
+                        <h5 class="cart-overlay-name">sofa set</h5>
+                        <h5 class="cart-overlay-price">$99.5</h5>
+                        <button class="cart-overlay-btn">remove</button>
+
+                    </div>
+
+                    <div class="cart-overlay-toggle-btn">
+
+                        <button class="increase-btn"><i class="fa-solid fa-angle-up"></i></button>
+                        <span class="cart-overlay-value">1</span>
+                        <button class="decrease-btn"><i class="fa-solid fa-angle-down"></i></button>
+
+                    </div>
+
+
+                </article>
+
+
+
+            </div>
+
+
+            <div class="cart-overlay-total">
+                <h4>Total: <span class="total-value">$79.98</span></h4>
+                <button class="checkout-btn">checkout</button>
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <nav class="navbar product-navbar ">
+
+        <div class="main-nav section-center">
+
+            <button class="toggle-btn"><i class="fas fa-bars"></i></button>
+
+            <ul class="nav-links">
+                <button class="link"><a href="../index.html">home</a></button>
+                <button class="link"><a href="../pages/products.html">products</a></button>
+                <button class="link"><a href="../pages/about.html">about</a></button>
+            </ul>
+
+            <img src="../images/logo-black.svg" alt="logo" class="logo-img">
+
+            <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span
+                    class="total-item-span">5</span></button>
+
+        </div>
+
+    </nav>
+
+    <div class="section-navigate">
+        <h4 class="navigate section-center">Home / <span class="navigate-name"></span></h4>
+    </div>
+
+
+    <div class="loading"></div>
+    <h3 class="alert-danger"></h3>
+
+
+    <div class="single-container section-center">
+
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script type="module" src="../src/singleProduct.js"></script>
+
+</body>
+
+</html>

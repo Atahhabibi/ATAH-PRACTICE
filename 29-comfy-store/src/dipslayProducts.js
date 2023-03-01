@@ -1,3 +1,8 @@
+import { displayCartItem } from "./displayCartItem.js";
+import { getElement } from "../Utils.js";
+const cartOverlayDOM=getElement('.cart-overlay');
+import { handleCurrentCart } from "./currentCart.js";
+
 
 const displayProducts=(data,container)=>{
     
@@ -17,8 +22,8 @@ const displayProducts=(data,container)=>{
                 
                 <div class="icon-container">
 
-                    <a href="./pages/product.html?id=${id}"><button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button></a>
-                    <button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <a href="../pages/product.html?id=${id}"><button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button></a>
+                    <button class="cart-icon" data-id="${id}"><i class="fa-solid fa-cart-shopping"  data-id="${id}"></i></button>
 
                 </div>
 
@@ -40,7 +45,42 @@ const displayProducts=(data,container)=>{
      container.innerHTML=newData;
 
 
+
+
+      const cartIconsProductDOMs=getElement('.cart-icon','all');
+
+      cartIconsProductDOMs.forEach((icon)=>{
+
+      icon.addEventListener('click',(e)=>{
+
+      cartOverlayDOM.classList.add('show-cart');
+      const element=e.target;
+
+      if(element.classList.contains('cart-icon') || element.classList.contains('fa-cart-shopping') ){
+
+        const id=element.dataset.id;
+
+        handleCurrentCart(id);
+       
+    
+      }
+
+
+      })
+   })
+
+
+
 }
+
+
+
+
+
+
+
+
+
 
 
 function formatprice(price){
