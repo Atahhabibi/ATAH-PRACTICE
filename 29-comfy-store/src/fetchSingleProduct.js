@@ -47,12 +47,14 @@ function getReguiredArray(data){
  newData=newData.map((item)=>{
      const {id,fields}=item;
 
+     let amount=1;
+
 
      const {company,colors,featured,price,name,image,description:info}=fields;
 
      const {thumbnails:{large:{url:img}}}=image[0];
 
-     return {company,colors,featured,price,name,img,info,id};
+     return {company,colors,featured,price,name,img,info,id,amount};
 
  });
 

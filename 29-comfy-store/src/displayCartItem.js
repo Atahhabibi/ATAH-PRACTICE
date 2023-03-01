@@ -8,10 +8,7 @@ const cartOverlyContainerDOM=getElement('.cart-overlay-container');
 
 const displayCartItem=()=>{
 
-
- let products=getProductsFormLocalStorage();
-
-
+let products=getProductsFormLocalStorage()
 
  if(products.length===0){
     cartOverlyContainerDOM.innerHTML=" ";

@@ -2,6 +2,7 @@ import { displayProducts } from './src/dipslayProducts.js';
 import { fetchProducts } from './src/fetchProducts.js';
 import {getElement} from './Utils.js';
 import './src/toggleSidebar.js'
+import './src/toggleCartbar.js'
 
 
 const featureContainerDOM=getElement('.feature-container');

@@ -10,10 +10,18 @@ const handleCurrentCart=async(id)=>{
 
     const product= await fetchSingleProduct(id);
 
-    setProductsToLocalStorage(product[0]);
-   
-    displayCartItem();
+    setProductsToLocalStorage(product[0])
 
+
+
+
+    
+    displayCartItem()
+    
+
+
+    
+   
     
 }
 
@@ -22,14 +30,18 @@ const handleCurrentCart=async(id)=>{
 
 
 
-function setProductsToLocalStorage(product){
+function setProductsToLocalStorage(productPara){
 
-    const productsArray=getProductsFormLocalStorage();
-    productsArray.push(product);
-
+    let productsArray=getProductsFormLocalStorage();
+    productsArray.push(productPara);
     localStorage.setItem('products',JSON.stringify(productsArray));
+ 
 
 }
+
+
+
+
 
 function getProductsFormLocalStorage(){
 
