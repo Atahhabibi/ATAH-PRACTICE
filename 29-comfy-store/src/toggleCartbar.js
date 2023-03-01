@@ -1,5 +1,4 @@
 import { getElement } from '../Utils.js';
-import { getProductsFormLocalStorage, handleCurrentCart } from './currentCart.js';
 import { displayCartItem } from './displayCartItem.js';
 
 

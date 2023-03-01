@@ -7,8 +7,6 @@ const alertDangerDOM=getElement('.alert-danger');
 
 
 
-let tempID;
-
 const fetchSingleProduct=async(id)=>{
 
 
@@ -20,8 +18,6 @@ const fetchSingleProduct=async(id)=>{
         if(response.status>=200 && response.status<=299 && response.ok){
             loadingDOM.style.display='none';
             let data= await response.json();
-
-            tempID=id;
 
            data=getReguiredArray(data);
            return data;

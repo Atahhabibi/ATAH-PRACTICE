@@ -1,4 +1,4 @@
-import { displayCartItem } from "./displayCartItem.js";
+
 import { getElement } from "../Utils.js";
 const cartOverlayDOM=getElement('.cart-overlay');
 import { handleCurrentCart } from "./currentCart.js";
