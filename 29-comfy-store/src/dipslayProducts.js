@@ -2,6 +2,7 @@
 import { getElement } from "../Utils.js";
 const cartOverlayDOM=getElement('.cart-overlay');
 import { handleCurrentCart } from "./currentCart.js";
+import { showCartTotalItems } from "./toggleCartbar.js";
 
 
 const displayProducts=(data,container)=>{
@@ -57,6 +58,8 @@ const displayProducts=(data,container)=>{
       const element=e.target;
 
       if(element.classList.contains('cart-icon') || element.classList.contains('fa-cart-shopping') ){
+        
+        showCartTotalItems();
 
         const id=element.dataset.id;
 
