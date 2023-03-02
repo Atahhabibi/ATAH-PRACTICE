@@ -41,7 +41,7 @@ const handleCurrentCart=async(id)=>{
 
 
     
-    displayCartItem()
+    
     
 
 

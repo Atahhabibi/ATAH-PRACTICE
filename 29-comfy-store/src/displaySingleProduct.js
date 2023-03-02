@@ -1,4 +1,5 @@
-import { formatPrice } from "../Utils.js";
+import { formatPrice, getElement } from "../Utils.js";
+import { handleCurrentCart } from "./currentCart.js";
 
 const displaySingleProducts=(data,container)=>{
     
@@ -10,7 +11,7 @@ const displaySingleProducts=(data,container)=>{
 
     newData=newData.map((item)=>{;
 
-        const {name,img,price,info,company}=item;
+        const {name,img,price,info,company,id}=item;
         
         return`
         
@@ -24,7 +25,7 @@ const displaySingleProducts=(data,container)=>{
             <div class="colors"></div>
             <p class="singe-information">${info}</p>
 
-            <button class="add-to-cart-btn">add to cart</button>
+            <button class="add-to-cart-btn" data-id="${id}">add to cart</button>
 
         </div>
 
@@ -35,6 +36,16 @@ const displaySingleProducts=(data,container)=>{
 
 
      container.innerHTML=newData;
+
+     const addToCartBtnDOM=getElement('.add-to-cart-btn');
+
+     addToCartBtnDOM.addEventListener('click',(e)=>{
+
+        const elementID=e.target.dataset.id;
+
+        handleCurrentCart(elementID)
+
+     })
 
 
 }
