@@ -9,8 +9,33 @@ import { fetchSingleProduct } from './fetchSingleProduct.js';
 const handleCurrentCart=async(id)=>{
 
     const product= await fetchSingleProduct(id);
+    let newProduct=product[0];
 
-    setProductsToLocalStorage(product[0])
+
+    const storeArray=getProductsFormLocalStorage();
+
+    if(storeArray.length===0){
+        setProductsToLocalStorage(newProduct);
+        displayCartItem();
+        return; 
+    }
+
+   let tempObject=storeArray.find((item)=>item.id===newProduct.id);
+
+
+   if(tempObject){
+       removeProductFromLocalStorage(newProduct.id);
+       tempObject.amount++;
+       setProductsToLocalStorage(tempObject);
+       displayCartItem();
+
+   }else{
+
+     setProductsToLocalStorage(newProduct);
+     displayCartItem();
+
+   }
+  
 
 
 
