@@ -1,6 +1,7 @@
 import { getElement } from '../Utils.js';
 import { displayCartItem } from './displayCartItem.js';
 import { fetchSingleProduct } from './fetchSingleProduct.js';
+import { showTotalAmountMoney } from './toggleCartbar.js';
 
 
 
@@ -38,12 +39,7 @@ const handleCurrentCart=async(id)=>{
   
 
 
-
-
-    
-    
-    
-
+   showTotalAmountMoney();
 
     
    

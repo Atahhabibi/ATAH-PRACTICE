@@ -1,6 +1,7 @@
 import { formatPrice, getElement } from '../Utils.js';
 import { getProductsFormLocalStorage, handleCurrentCart, setProductsToLocalStorage, } from './currentCart.js';
 import { removeProductFromLocalStorage } from './currentCart.js';
+import { showCartTotalItems, showTotalAmountMoney } from './toggleCartbar.js';
 
 
 
@@ -60,6 +61,8 @@ let products=getProductsFormLocalStorage()
            const id=e.target.dataset.id;
            removeProductFromLocalStorage(id);
            displayCartItem();
+           showTotalAmountMoney();
+           showCartTotalItems();
         })
     })
 
@@ -90,6 +93,8 @@ let products=getProductsFormLocalStorage()
 
                 setProductsToLocalStorage(tempObject);
 
+                showTotalAmountMoney();
+
                 tempArray=getProductsFormLocalStorage();
                 tempObject=tempArray.find((item)=>item.id===elementID);
 
@@ -117,12 +122,13 @@ let products=getProductsFormLocalStorage()
                 removeProductFromLocalStorage(elementID);
 
                 setProductsToLocalStorage(tempObject);
+                showTotalAmountMoney();
 
                 tempArray=getProductsFormLocalStorage();
                 tempObject=tempArray.find((item)=>item.id===elementID);
 
                 if(tempObject.amount<1){
-                    
+
                     removeProductFromLocalStorage(elementID);
                     displayCartItem();
                 }

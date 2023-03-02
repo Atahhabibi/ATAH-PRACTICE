@@ -1,6 +1,6 @@
 import { formatPrice, getElement } from "../Utils.js";
 import { handleCurrentCart } from "./currentCart.js";
-import { showCartTotalItems } from "./toggleCartbar.js";
+import { showCartTotalItems, showTotalAmountMoney } from "./toggleCartbar.js";
 
 const displaySingleProducts=(data,container)=>{
     
@@ -43,6 +43,7 @@ const displaySingleProducts=(data,container)=>{
      addToCartBtnDOM.addEventListener('click',(e)=>{
 
         showCartTotalItems();
+        showTotalAmountMoney();
 
         const elementID=e.target.dataset.id;
 
