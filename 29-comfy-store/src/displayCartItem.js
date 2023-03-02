@@ -18,7 +18,7 @@ let products=getProductsFormLocalStorage()
 
  let newProducts=products.map((item)=>{
      
-     const {name,img,price,id}=item;
+     const {name,img,price,id,amount}=item;
 
 
     return `<article class="cart-overlay-product">
@@ -35,9 +35,9 @@ let products=getProductsFormLocalStorage()
     
                     <div class="cart-overlay-toggle-btn">
     
-                        <button class="increase-btn"><i class="fa-solid fa-angle-up"></i></button>
-                        <span class="cart-overlay-value">1</span>
-                        <button class="decrease-btn"><i class="fa-solid fa-angle-down"></i></button>
+                        <button class="increase-btn" data-id="${id}"><i class="fa-solid fa-angle-up"></i></button>
+                        <span class="cart-overlay-value">${amount}</span>
+                        <button class="decrease-btn" data-id="${id}"><i class="fa-solid fa-angle-down"></i></button>
     
                     </div>
     
@@ -53,6 +53,8 @@ let products=getProductsFormLocalStorage()
 
      const removeBtnDOMs=getElement('.cart-overlay-btn','all');
 
+     const changeBtnDOMs=getElement('.cart-overlay-toggle-btn','all');
+
      removeBtnDOMs.forEach((btn)=>{
            btn.addEventListener('click',(e)=>{
            const id=e.target.dataset.id;
@@ -60,6 +62,24 @@ let products=getProductsFormLocalStorage()
            displayCartItem();
         })
     })
+
+    changeBtnDOMs.forEach((btn)=>{
+        btn.addEventListener('click',(e)=>{
+
+            const element=e.target.parentElement;
+            const elementID=element.dataset.id;
+
+
+            
+
+
+
+        })
+    })
+
+
+
+
 
 
 }
