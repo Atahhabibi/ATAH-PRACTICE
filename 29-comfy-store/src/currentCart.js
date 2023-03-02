@@ -58,7 +58,7 @@ const handleCurrentCart=async(id)=>{
 function setProductsToLocalStorage(productPara){
 
     let productsArray=getProductsFormLocalStorage();
-    productsArray.push(productPara);
+    productsArray.unshift(productPara);
     localStorage.setItem('products',JSON.stringify(productsArray));
  
 

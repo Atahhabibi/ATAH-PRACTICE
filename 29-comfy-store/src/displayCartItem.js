@@ -1,5 +1,5 @@
 import { formatPrice, getElement } from '../Utils.js';
-import { getProductsFormLocalStorage, } from './currentCart.js';
+import { getProductsFormLocalStorage, handleCurrentCart, setProductsToLocalStorage, } from './currentCart.js';
 import { removeProductFromLocalStorage } from './currentCart.js';
 
 
@@ -69,10 +69,68 @@ let products=getProductsFormLocalStorage()
             const element=e.target.parentElement;
             const elementID=element.dataset.id;
 
-
             
 
+            if(element.classList.contains('increase-btn')){
 
+                let tempArray=getProductsFormLocalStorage();
+
+                tempArray=tempArray.map((item)=>{
+
+                    if(item.id===elementID){
+                        item.amount++;
+                    }
+                    return item; 
+
+                })
+
+                let tempObject=tempArray.find((item)=>item.id===elementID);
+
+                removeProductFromLocalStorage(elementID);
+
+                setProductsToLocalStorage(tempObject);
+
+                tempArray=getProductsFormLocalStorage();
+                tempObject=tempArray.find((item)=>item.id===elementID);
+
+                const valueCounterDOM=element.nextElementSibling;
+                valueCounterDOM.textContent=tempObject.amount; 
+                
+            }
+
+            if(element.classList.contains('decrease-btn')){
+
+                let tempArray=getProductsFormLocalStorage();
+
+                tempArray=tempArray.map((item)=>{
+
+                    if(item.id===elementID){
+                        item.amount--;
+                    }
+
+                    return item; 
+
+                })
+
+                let tempObject=tempArray.find((item)=>item.id===elementID);
+
+                removeProductFromLocalStorage(elementID);
+
+                setProductsToLocalStorage(tempObject);
+
+                tempArray=getProductsFormLocalStorage();
+                tempObject=tempArray.find((item)=>item.id===elementID);
+
+                if(tempObject.amount<1){
+                    
+                    removeProductFromLocalStorage(elementID);
+                    displayCartItem();
+                }
+
+                const valueCounterDOM=element.previousElementSibling;
+                valueCounterDOM.textContent=tempObject.amount; 
+                
+            }
 
         })
     })
