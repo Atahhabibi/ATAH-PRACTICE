@@ -248,8 +248,9 @@ PORTOFOLIO-ATAH HABIBI
     align-items: center;
     background:var(--primary-400);
     box-shadow:0px 1px 10px rgba(0 ,0, 0, 0.23);
-    /* width: 100%; */
+    border: 2px solid black;
 }
+
 
 .nav-header{
     display: flex;
@@ -406,14 +407,19 @@ PORTOFOLIO-ATAH HABIBI
         padding-left: 2rem;
     }
 
+    .navbar{
+        position:relative;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
     .nav-wrapper{
         max-width: var(--max-width);
         position: fixed;
         top: 0;
-        width:95vw;
-        margin:0 auto;
-        margin: 0 auto;
+        min-width: 100vw;
         border: 2px solid red;
+       
        
 
     }
