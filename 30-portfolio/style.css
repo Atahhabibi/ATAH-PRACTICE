@@ -243,17 +243,60 @@ PORTOFOLIO-ATAH HABIBI
 }
 
 .navbar{
-    display: flex;
-    justify-content: space-between;
+    /* position: fixed;
+    top: 0; */
     align-items: center;
-    padding: 1rem;
     background:var(--primary-400);
     box-shadow:0px 1px 10px rgba(0 ,0, 0, 0.23);
+    /* width: 100%; */
 }
 
-.page-links{
-    display: none;
+.nav-header{
+    display: flex;
+    justify-content: space-between;
+    padding:0.5rem;
+    background:var(--primary-600);
 }
+
+
+.page-links{
+  /* padding-top:1rem; */
+  overflow: hidden;
+  display: none;
+}
+
+
+.show-links{
+   display: block;
+}
+
+
+.link{
+    transition: var(--transititon);
+    padding: 0.6rem 0;
+    padding-left:0.8rem;
+    letter-spacing: var(--leterSpacing);
+}
+
+.link:first-child{
+    padding-top:1rem;
+}
+
+.link:hover{
+    background:var(--grey-300);
+    padding-left:1.5rem ;
+    cursor: pointer;
+   
+}
+
+.link a{
+    text-transform: capitalize;
+    color: var(--primary-900);
+    font-size:1.2rem;
+}
+
+
+
 
 .logo span{
     color: var(--primary-100);
@@ -274,7 +317,10 @@ PORTOFOLIO-ATAH HABIBI
     font-size:2rem;
     color: var(--grey-900);
     transition: var(--transititon);
+    margin-left:-2rem;
 }
+
+
 
 .toggle-btn:hover{
     color: var(--primary-100);
@@ -286,17 +332,12 @@ PORTOFOLIO-ATAH HABIBI
 
 
 .section-center{
- min-height:calc(100vh - 12rem);
+ min-height:calc(100vh - 1rem);
  display: grid;
  place-items: center;
  text-align: center;
 }
 
-/* .underline{
-    width:4.5rem;
-    height:0.3rem;
-    background:var(--grey-100);
-} */
 
 .name{
     font-size:3.5rem;
@@ -353,10 +394,33 @@ PORTOFOLIO-ATAH HABIBI
     color:var(--primary-600);
 }
 
+/* for litte larger iphone */
 
-@media screen and (min-width:820px) {
+@media screen and (min-width:418px) {
     
+    .link{
+        padding-left:1.4rem;
+    }
+
+    .link:hover{
+        padding-left: 2rem;
+    }
+
+    .nav-wrapper{
+        max-width: var(--max-width);
+        position: fixed;
+        top: 0;
+        width:95vw;
+        margin:0 auto;
+        margin: 0 auto;
+        border: 2px solid red;
+       
+
+    }
 }
+
+
+
 
 
 
