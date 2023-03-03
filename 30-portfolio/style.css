@@ -248,7 +248,6 @@ PORTOFOLIO-ATAH HABIBI
     align-items: center;
     background:var(--primary-400);
     box-shadow:0px 1px 10px rgba(0 ,0, 0, 0.23);
-    border: 2px solid black;
 }
 
 
@@ -397,20 +396,34 @@ PORTOFOLIO-ATAH HABIBI
 
 /* for litte larger iphone */
 
-@media screen and (min-width:418px) {
+@media screen and (min-width:800px) {
     
-    .link{
-        padding-left:1.4rem;
+
+    .toggle-btn{
+        display: none;
     }
 
-    .link:hover{
-        padding-left: 2rem;
+ 
+    .atah-profile{
+      /* display: flex;
+      justify-content: space-around; */
     }
+
+
+    .photo-hero{
+        display: block;
+        height:35rem;
+        width: 25rem;
+        border-radius: 10px;
+        box-shadow: 1px 2px 4px var(--primary-200)
+    }
+
 
     .navbar{
         position:relative;
         max-width: var(--max-width);
         margin: 0 auto;
+        box-shadow: none;
     }
 
     .nav-wrapper{
@@ -418,10 +431,8 @@ PORTOFOLIO-ATAH HABIBI
         position: fixed;
         top: 0;
         min-width: 100vw;
-        border: 2px solid red;
-       
-       
-
+        background:var(--primary-600);
+      
     }
 }
 
