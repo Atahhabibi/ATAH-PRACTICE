@@ -524,6 +524,25 @@ PORTOFOLIO-ATAH HABIBI
 }
 
 
+@media screen and (min-width:750px) {
+
+    .name{
+        font-size:5rem;
+    }
+
+    .job{
+        font-size:1.8rem;
+    }
+  
+    .icon{
+        font-size:3rem;
+    }
+
+
+}
+
+
+
 
 
 @media screen and (min-width:810px) {
@@ -679,29 +698,33 @@ PORTOFOLIO-ATAH HABIBI
  */
 
 .about-section{
-   background:var(--primary-400);
+   background:var(--primary-100);
+}
+
+.about-title{
+    margin-bottom:0.5rem;
+}
+
+.about-title h2{
+    letter-spacing:4px;
 }
 
 .about-img{
-    height:20rem;
-    width:15rem;
     margin:0 auto;
     border-radius:10px;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5) ;
     margin-bottom:1.5rem;
-
-}
-
-.about-info-container{
-    display: flex;
+    box-shadow: 0px 4px 10px var(--primary-900);
+    height:25rem;
+    width:18rem;
 }
 
 
 
  .about-me{
-     font-size:1.2rem;
+     font-size:1rem;
      color: var(--primary-900);
  }
+
 
  .about-info{
      padding:2rem 0.5rem;
@@ -724,7 +747,49 @@ PORTOFOLIO-ATAH HABIBI
      color: var(--primary-700);
  }
 
+
+
+
+
+ @media screen and (min-width:700px) {
+     .about-img{
+         width:30rem;
+         height:40rem;
+     }
+
+     .about-me{
+         font-size:1.4rem;
+         max-width:35rem;
+         margin: 0 auto;
+     }
+     .about-btn{
+         padding:1.5rem 1rem;
+     }
+
+
+ }
+ 
+
  @media screen and (min-width:800px) {
+
+    .about-img{
+        width:25rem;
+        height:25rem;
+        margin-right:1rem;
+        transition: var(--transititon);
+        box-shadow: 0px 0px 25px rgba(2, 33, 2, 0.8);
+        margin-top:1.5rem;
+    }
+
+   .about-info-container{
+       display: flex;
+       column-gap:1rem;
+       margin:0 2rem;
+   }
+
+   .about-info{
+       text-align:justify;
+   }
 
     .about-title h2{
         font-size:3rem;
@@ -732,16 +797,37 @@ PORTOFOLIO-ATAH HABIBI
 
     .about-me{
         font-size:1.2rem;
+        margin-bottom:1.5rem;
+        max-width:45rem;
     }
 
     .about-btn{
         padding:0.5rem;
         letter-spacing:2px;
     }
+
+    .about-btn{
+        margin-top: 0;
+        padding: 1rem;
+    }
+     
+ }
+
+
+ @media screen and (min-width:1000px) {
+
+    .about-img{
+        margin-top: 0;
+    }
+
+    .about-me{
+        margin-top:1rem;
+    }
+
+
      
  }
  
-
 
  /* 
  ================
@@ -751,8 +837,9 @@ PORTOFOLIO-ATAH HABIBI
 
  
  .skills-section{
-   padding-top:5rem;
+   padding-top:3rem;
    background:var(--primary-200);
+   padding-bottom:5rem;
 
  }
 
@@ -762,68 +849,127 @@ PORTOFOLIO-ATAH HABIBI
  }
 
  .skill-title .underline{
-     width:8rem;
-     margin-bottom:4rem;
+     width:15rem;
+     margin-bottom:2rem;
  }
  
 
  .skill{
-     margin-bottom:2rem;
      text-align: center;
-     padding: 2rem 1rem;
-     background: var(--primary-100);
+     background: var(--primary-800);
      box-shadow: var(--shadow-2);
-     border-radius:8px;
+     border-radius:10px;
      transition: var(--transititon);
  }
 
+ .skills-container{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-column:0.5rem;
+     gap:1rem;
+ }
+
  .skill:hover{
-     background:rgb(223, 149, 123);
+     background:whitesmoke
+     
+ }
+
+ .skill:hover .skill-name{
+     color: var(--primary-900);
  }
 
  .skill:hover .skill-info{
      color: var(--primary-100);
  } 
 
-
+ .skill:hover .skill-icon{
+     color: var(--primary-900);
+ } 
 
 
 
  .skill-icon{
      font-size:2rem;
+     color: white;
     
  }
 
-
  .skill-name{
-     font-size:1.4rem;
      margin-bottom:1rem;
+     font-size:1rem;
+     color: white;
  }
 
+ .skill-info{
+     display: none;
+ }
 
 .visual-icon{
-    height:2.4rem;
+    height:2rem;
     color:var(--primary-800);
 }
 
 
-@media screen and (min-width:800px) {
+
+
+@media screen and (min-width:700px) {
+
     .skills-container{
         display: grid;
-        grid-template-columns:1fr 1fr;
-        gap:2rem;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .skill-icon{
+        font-size:5rem;
+    }
+
+
+    .visual-icon{
+        height:5rem;
+    }
+
+    .skill-title h2{
+        font-size:3rem;
+    }
+
+    .skill-name{
+        font-size:1.5rem;
+    }
+
+
+}
+
+
+
+@media screen and (min-width:800px) {
+
+    .skills-container{
+        display: grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:1rem;
     }
 
     .skill{
-        margin-bottom:0;
+        padding:1.5rem;
+
+    }
+
+    .skill:hover .skill-info{
+        color: var(--primary-900);
+    }
+
+    .skill:hover .skill-icon{
+        color: coral;
     }
 
     .skill-icon{
         font-size: 2.5rem;
     }
+
+ 
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:1200px) {
     .skills-container{
         grid-template-columns:1fr 1fr 1fr;
     }
@@ -840,7 +986,200 @@ PORTOFOLIO-ATAH HABIBI
         transform:scale(1.04);
     }
 
+    .skill-info{
+        display: block;
+    }
+
+
 }
+
+
+/* 
+================
+LATEST WORKDS SECTION
+================
+*/
+
+.work-section{
+    padding:2rem 0;
+}
+
+
+.work-title h2{
+    font-size:2.2rem;
+}
+
+.work-info{
+    text-align: center;
+    padding:1rem;
+    padding-top: 0;
+    padding-bottom:3rem;
+    color: var(--grey-600);
+    width: 30rem;
+    margin: 0 auto;
+}
+
+
+.work-img-container{
+    border-radius:10px;
+    position: relative;
+    background:var(--primary-500);
+}
+
+
+
+.project-container a{
+    display: block;
+}
+
+.project-img{
+    border-radius:10px;
+    position: relative;
+    max-height:15rem;
+}
+
+.single-project-info{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: grid;
+    place-items: center;
+    transition: var(--transititon);
+    opacity:0;
+    text-align: center;
+}
+
+
+.project-title{
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    font-size:1.5rem;
+}
+
+.client-name{
+    letter-spacing: 2px;
+}
+
+
+.work-img-container::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 4px solid var(--primary-100);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius:10px;
+    transition: var(--transititon);
+    opacity:0;
+}
+
+.work-img-container:hover::after{
+    scale:0.8;
+    opacity: 1;
+}
+
+.work-img-container:hover .project-img{
+    opacity: 0.2;
+}
+
+.work-img-container:hover .single-project-info{
+    opacity: 1;
+}
+
+.work-img-container{
+    margin-bottom:2rem;
+}
+
+
+
+
+
+@media screen and (min-width:660px) {
+
+    .work-info{
+        font-size:1.3rem;
+         width:35rem;
+    }
+
+    .project-container{
+        display: grid;
+        grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+        gap:1.5rem;
+        
+    }
+
+    .project-img{
+        min-height:20rem;
+    }
+
+   .work-img-container{
+       margin-bottom: 0;
+   }
+
+
+}
+
+
+@media screen and (min-width:1000px) {
+
+    .work-info{
+        width:50rem;
+        font-size:1.2rem;
+    }
+
+    .work-title h2{
+        font-size:2.5rem;
+    }
+    
+    .project-container{
+        display:grid;
+        grid-template-rows: 300px 300px;
+        gap:1rem;
+        grid-template-areas:
+        'a b b'
+        'a c d';
+    }
+
+
+
+    .work-img-container{
+        height: 100%;
+    }
+
+    .project-img{
+        min-height: 100%;
+    }
+
+
+
+
+   .project-1{
+       grid-area: a;
+   }
+
+   .project-2{
+       grid-area: b;
+   }
+
+   .project-3{
+       grid-area: c;
+   }
+
+   .project-4{
+       grid-area: d;
+   }
+
+    
+
+
+
+
+}
+
 
 
 
