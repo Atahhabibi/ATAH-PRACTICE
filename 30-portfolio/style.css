@@ -739,12 +739,12 @@ PORTOFOLIO-ATAH HABIBI
  }
 
  .about-btn:hover{
-     background:white;
+     background:var(--primary-600);
  }
 
 
  .about-btn:hover a{
-     color: var(--primary-700);
+    color: white;
  }
 
 
@@ -771,6 +771,10 @@ PORTOFOLIO-ATAH HABIBI
  
 
  @media screen and (min-width:800px) {
+ 
+    .about-section{
+        padding-bottom:2rem;
+    }
 
     .about-img{
         width:25rem;
@@ -804,12 +808,11 @@ PORTOFOLIO-ATAH HABIBI
     .about-btn{
         padding:0.5rem;
         letter-spacing:2px;
-    }
-
-    .about-btn{
         margin-top: 0;
         padding: 1rem;
+        display: block;
     }
+
      
  }
 
@@ -860,6 +863,7 @@ PORTOFOLIO-ATAH HABIBI
      box-shadow: var(--shadow-2);
      border-radius:10px;
      transition: var(--transititon);
+     padding: 1rem;
  }
 
  .skills-container{
@@ -889,7 +893,7 @@ PORTOFOLIO-ATAH HABIBI
 
 
  .skill-icon{
-     font-size:2rem;
+     font-size:1rem;
      color: white;
     
  }
@@ -904,10 +908,7 @@ PORTOFOLIO-ATAH HABIBI
      display: none;
  }
 
-.visual-icon{
-    height:2rem;
-    color:var(--primary-800);
-}
+
 
 
 
@@ -917,15 +918,6 @@ PORTOFOLIO-ATAH HABIBI
     .skills-container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .skill-icon{
-        font-size:5rem;
-    }
-
-
-    .visual-icon{
-        height:5rem;
     }
 
     .skill-title h2{
@@ -962,9 +954,6 @@ PORTOFOLIO-ATAH HABIBI
         color: coral;
     }
 
-    .skill-icon{
-        font-size: 2.5rem;
-    }
 
  
 }
@@ -988,6 +977,14 @@ PORTOFOLIO-ATAH HABIBI
 
     .skill-info{
         display: block;
+    }
+
+    .skill-icon img{
+        width:5rem;
+    }
+
+    .skill-name{
+        margin-top:-1rem;
     }
 
 
@@ -1015,8 +1012,7 @@ LATEST WORKDS SECTION
     padding-top: 0;
     padding-bottom:3rem;
     color: var(--grey-600);
-    width: 30rem;
-    margin: 0 auto;
+ 
 }
 
 
@@ -1096,13 +1092,10 @@ LATEST WORKDS SECTION
 
 
 
-
-
 @media screen and (min-width:660px) {
 
     .work-info{
         font-size:1.3rem;
-         width:35rem;
     }
 
     .project-container{
@@ -1127,7 +1120,8 @@ LATEST WORKDS SECTION
 @media screen and (min-width:1000px) {
 
     .work-info{
-        width:50rem;
+        max-width: 50rem;
+        margin: 0 auto;
         font-size:1.2rem;
     }
 
@@ -1179,6 +1173,255 @@ LATEST WORKDS SECTION
 
 
 }
+
+
+/* 
+================
+CONNECT SECTION
+================
+*/
+
+
+.connect-section{
+    min-height: 40vh;
+    position: relative; 
+    margin: 2rem 0;
+    padding: 10rem 0 5rem 0;
+    display: grid;
+    place-items: center;
+    clip-path: polygon(50% 0, 100% 10%, 100% 90%, 50% 100%, 0 90%, 0 10%)
+     
+
+}
+
+.video-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    object-fit: cover;
+}
+
+.connect-section::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:var(--primary-300);
+    opacity: 0.8;
+    z-index:-1;
+
+}
+
+.connect-title{
+    margin-bottom:1rem;
+}
+
+.connect-center{
+    background:var(--primary-100);
+    padding:3rem 5rem 12rem 5rem;
+    text-align: center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+}
+
+
+
+.connect-info{
+    max-width: 30rem;
+    margin-bottom:2rem;
+    display: none;
+}
+
+.connect-btn{
+    margin: 0 auto;
+    display: block;
+    letter-spacing:none;
+    font-size:1rem;
+}
+
+.connect-btn:hover{
+    background:var(--primary-700);
+    color: var(--primary-100);
+}
+
+
+
+
+
+@media screen and (min-width:700px) {
+    .connect-info{
+        display: block;
+        font-size:1.2rem;
+        color: var(--primary-900);
+    }
+    
+}
+
+@media screen and (min-width:1000px) {
+
+    .connect-section{
+        margin-top:5rem;
+    }
+    
+}
+
+/* 
+================
+BLOG SECTION
+================
+*/
+
+.section-blog{
+    padding:3rem 0;
+    margin-top:7rem;
+    background:var(--primary-700);
+}
+
+.blog{
+    border-radius: 10px;
+    margin-bottom:2rem;
+    position: relative;
+    perspective: 1500px;
+    height:25rem;
+}
+
+.blog-side{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition:all 2s linear;
+    visibility: visible;
+}
+
+.blog-front{
+    background: var(--primary-200);
+}
+
+.blog-back{
+    background:var(--primary-100);
+    transform: rotateY(180deg);
+    display: grid;
+    place-items: center;
+}
+
+
+.blog:hover .blog-front{
+    transform:rotateY(-180deg);
+}
+
+.blog:hover .blog-back{
+    transform: rotateY(0);
+}
+
+
+.blog-back a{
+ display: block;
+}
+
+.blog-btn{
+    padding:1rem 2rem;
+    letter-spacing: none;
+    background:peru;
+    text-transform: uppercase;
+    border-radius: 10px;
+    color:white;
+    letter-spacing:2px;
+    transition: var(--transititon);
+    font-weight: bold;
+
+}
+
+.blog-btn:hover{
+    background:var(--primary-800);
+    color: white;
+}
+
+
+
+.blog-img{
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    max-height:12rem;
+}
+
+.blog-title{
+    letter-spacing:1px;
+    margin-bottom:0.5rem;
+    font-family:var(--ff-family-3);
+    font-weight: bold;
+    color: black;
+    font-size:1.1rem;
+}
+
+.blog-main-title{
+    margin-bottom:2rem;
+}
+
+.blog-text{
+    margin-bottom:1rem;
+    color: var(--grey-500);
+}
+
+.blog-info{
+    padding:1rem;
+}
+
+.blog-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-person-img{
+    width:2.5rem;
+    height:2.5rem;
+    border-radius:50%;
+}
+
+.minute-read{
+    text-transform: uppercase;
+    color: coral;
+    font-weight: bold;
+}
+
+
+
+@media screen and (min-width:700px) {
+    .blogs-container{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        gap:2rem;
+    }
+
+    .blog{
+        margin-bottom: 0;
+    }
+
+    .blog-main-title h2{
+        font-size:3rem;
+    }
+    
+}
+
+@media screen and (min-width:1000px) {
+    .blogs-container{
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+    
+    }
+
+ 
+    
+}
+
+
 
 
 
