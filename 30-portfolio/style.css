@@ -401,8 +401,10 @@ PORTOFOLIO-ATAH HABIBI
 .toggle-icons {
     display: flex;
     justify-content: space-around;
-    margin-top:4rem;
     padding: 0 1rem;
+    max-width:30rem;
+    margin: 0 auto;
+    margin-top:4rem;
     
 }
 
@@ -538,6 +540,18 @@ PORTOFOLIO-ATAH HABIBI
         font-size:3rem;
     }
 
+  .toggle-icons{
+      max-width:40rem;
+   }
+
+   .toggle-icon a{
+       font-size:3rem;
+   }
+
+   
+
+
+
 
 }
 
@@ -547,9 +561,6 @@ PORTOFOLIO-ATAH HABIBI
 
 @media screen and (min-width:810px) {
 
-    .section-center{
-
-    }
 
     .toggle-btn{
         display: none;
@@ -1329,7 +1340,7 @@ BLOG SECTION
 .blog-btn{
     padding:1rem 2rem;
     letter-spacing: none;
-    background:peru;
+    background:var(--primary-800);
     text-transform: uppercase;
     border-radius: 10px;
     color:white;
@@ -1340,7 +1351,7 @@ BLOG SECTION
 }
 
 .blog-btn:hover{
-    background:var(--primary-800);
+    background:peru;
     color: white;
 }
 
@@ -1421,10 +1432,269 @@ BLOG SECTION
     
 }
 
+/* 
+================
+FOOTER-SECTION
+================
+*/
+
+.footer{
+    width: 100vw;
+    height:15rem;
+    background:var(--grey-900);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
 
 
 
+.footer-icons{
+    display: flex;
+    justify-content: center;
+    column-gap:2rem;
+}
 
+.footer-icon{
+    background:transparent;
+    border: transparent;
+    font-size:1.5rem;
+    transition: var(--transititon);
+}
+
+.footer-icon:hover a{
+    color: peru;
+}
+
+
+.footer-icon a{
+    color: var(--primary-300);
+}
+
+.right-privacy{
+    color: var(--primary-300);
+    margin-top:1.5rem;
+    letter-spacing: 3px;
+    font-size:1rem;
+    text-align: center;
+}
+
+
+
+@media screen and (min-width:700px) {
+
+    .footer-icons{
+        column-gap:2.3rem;
+    }
+    
+    .footer-icon a{
+        font-size:2rem;
+    }
+
+    .right-privacy{
+        font-size:1.2rem;
+    }
+    
+}
+
+
+ 
+ /* 
+ ================
+ ABOUT-PAGE
+ ================
+ */
+ 
+ .about-page-section{
+     width: 100vw;
+     height:calc(100vh - 15rem);
+ }
+
+
+ .about-page-title{
+     margin-top:2rem;
+     font-size:2.5rem;
+ }
+
+ .underline{
+     width:12rem;
+ }
+
+ .about-page-info{
+   padding:1rem;
+   max-width:95vw;
+   text-align: center;
+   color: var(--grey-500);
+   margin-right: 0 auto;
+ }
+
+
+@media screen and (min-width:700px) {
+    .about-page-title{
+        font-size: 3rem;
+    }
+    .about-page-info{
+        font-size:1.2rem;
+        margin: 0 auto;
+        max-width:40rem;
+    }
+}
+
+
+/* 
+================
+CONTACT PAGE
+================
+*/
+
+
+.social-btn{
+    color: blue;
+    font-size:1.1rem;
+    display: block;
+    margin-top: 1rem;
+}
+
+
+
+@media screen and (min-width:1000px) {
+    .social-btn{
+        font-size:1.3rem;
+    }
+}
+
+
+/* 
+================
+PROJECT-PAGE
+================
+*/
+
+.projects-page-title{
+    margin-top:1rem;
+}
+
+
+.projects-container{
+   margin-top:2rem;
+   margin-bottom:3rem;
+   min-height:50vh
+}
+
+.project-work{
+    background:var(--primary-800);
+    margin-bottom:1.5rem;
+    max-height:30rem;
+    min-height:28rem;
+    border-radius:10px;
+    box-shadow:0px 0px 8px rgba(11, 26, 11, 0.5);
+}
+
+.project-img-container{
+    position: relative;
+}
+
+.project-page-img{
+    max-height:13rem;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+}
+
+.live-icon{
+    position: absolute;
+    top:85%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding:0.2rem;
+    border-radius: 50%;
+    border: 5px solid white;
+    background:rgb(211, 149, 149);
+    object-fit: cover;
+    display: block;
+    width:4.5rem;
+    cursor: pointer;
+}
+
+.project-information{
+    padding: 1rem;
+}
+
+.project-name{
+    font-size:1.3rem;
+    font-weight: bold;
+    letter-spacing: var(--leterSpacing);
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.project-info{
+   margin-bottom:1rem;
+
+}
+
+.project-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-icon{
+    background:transparent;
+    border: none;
+    color:var(--primary-200);
+    font-size:1.7rem;
+    cursor: pointer;
+    transition: var(--transititon);
+}
+
+.project-icon:hover{
+ color:peru;
+}
+
+.source-code{
+    background:transparent;
+    border: none;
+    color:var(--primary-200);
+    font-size:1.2rem;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.source-code:hover{
+    color: peru;
+}
+
+
+@media screen and (min-width:600px) {
+
+    .projects-container{
+
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        gap:2rem;
+    }
+
+    .project-work{
+        margin-bottom: 0;
+    }
+
+    .projects-page-title{
+        font-size:3rem;
+        margin-top:2rem;
+    }
+    
+}
+
+
+@media screen and (min-width:820px) {
+
+    .projects-container{
+        grid-template-columns:repeat(auto-fill,minmax(352px,1fr))
+  
+    }
+
+    
+    
+}
 
 
 
