@@ -210,6 +210,22 @@ ul{
 }
 
 
+.Error{
+    color: var(--red-dark);
+    text-align: center;
+    display: none;
+}
+
+.section-center{
+    width:90vw;
+    margin: 0 auto;
+    max-width: var(--max-width);
+    margin-bottom:6rem;
+}
+
+
+
+
 
 
 
