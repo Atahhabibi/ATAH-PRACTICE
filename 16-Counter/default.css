@@ -211,8 +211,8 @@ ul{
 
 section{
     width: 100vw;
-    height: 100vh;
-    padding:3rem 2rem;
+    min-height: 100vh;
+    padding:3rem 1rem;
     background:var(--grey-200);
 }
 
@@ -225,9 +225,8 @@ section{
     text-align: center;
     background:var(--white);
     max-width:50rem;
-    min-width: 650px;
     margin: 0 auto;
-    padding:4rem 0;
+    padding:4rem 1rem;
     box-shadow: var(--shadow-4);
     border-radius:12px;
     margin-bottom: 2rem;
@@ -253,9 +252,27 @@ section{
     font-size: 1.5rem;
     border-radius:5px;
     transition: var(--transititon);
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
 }
 
 .counter-btn:hover{
     color: var(--white);
     background:black;
+}
+
+
+@media screen and (min-width:800px) {
+
+
+    section{
+        padding:3rem 1rem;
+    }
+
+    .counter-btn{
+        display: inline;
+        margin:0 1rem;
+    }
+    
 }
