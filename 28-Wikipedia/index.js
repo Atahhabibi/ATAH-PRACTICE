@@ -25,8 +25,10 @@ formDOM.addEventListener('submit',async(e)=>{
 
     const data =await fetchSearchWiki(value);
     displayResults(data);
+    empyValueDom.style.display='none';
 
     const singleResultDOMs=getElement('.result-link','all');
+
 
     singleResultDOMs.forEach((result)=>{
 
